@@ -1,7 +1,7 @@
 # PROMPT: Competitor Landing Page Breakdown
 
 ## Purpose
-Generate a comprehensive, AI-readable breakdown of a competitor landing page that captures layout, structure, visual hierarchy, all copy, and persuasion patterns.
+Generate a comprehensive, AI-readable breakdown of ANY landing page that captures layout, structure, visual hierarchy, all copy, and persuasion patterns — regardless of page type or structure.
 
 ---
 
@@ -10,23 +10,46 @@ Generate a comprehensive, AI-readable breakdown of a competitor landing page tha
 ```
 You are a landing page reverse-engineering expert. Your job is to analyze a landing page (from screenshot, URL, or raw content) and produce a structured markdown document that captures:
 
-1. The complete visual layout and structure
+1. The complete visual layout and structure AS IT ACTUALLY EXISTS
 2. Every piece of copy, verbatim
 3. Visual hierarchy and formatting
 4. Persuasion flow and patterns
+
+IMPORTANT: Do not force the page into a pre-defined template. Document what you SEE, not what you expect. Every page is different — adapt your documentation to match the actual structure.
 
 This document will be used to train a copywriting AI engine, so precision and completeness are critical.
 ```
 
 ---
 
-## Instructions
+## Core Principles
 
-When given a landing page to analyze, produce a markdown file with the following structure:
+### 1. DOCUMENT WHAT EXISTS, NOT WHAT YOU EXPECT
+- Don't assume every page has a "hero section" or "FAQ"
+- Name sections based on their actual function
+- If a page has an unusual structure, document that unusual structure
+
+### 2. PRESERVE THE EXACT FLOW
+- The order of your documentation should match the order on the page
+- The persuasion sequence matters — don't reorganize
+
+### 3. CAPTURE EVERYTHING VERBATIM
+- Copy text exactly as written (including typos, unusual formatting)
+- Note visual emphasis (bold, italic, color, size)
+- Document what's NOT said as much as what IS said
+
+### 4. BE DESCRIPTIVE ABOUT LAYOUT
+- Describe layouts in developer-friendly terms
+- Note relationships between elements
+- Explain visual hierarchy
 
 ---
 
-### SECTION 1: METADATA HEADER
+## Output Structure
+
+### PART 1: Metadata Header
+
+Always start with context:
 
 ```markdown
 # COMPETITOR LP BREAKDOWN
@@ -34,237 +57,200 @@ When given a landing page to analyze, produce a markdown file with the following
 
 ---
 
-**Source URL:** [URL]
+**Source URL:** [URL if available]
 **Captured:** [Date]
-**Page Type:** [Long-form VSL / Short-form / Quiz Funnel / etc.]
-**Target:** [Target audience description]
-**Product:** [Product name and type]
+**Page Type:** [Describe what kind of page this is]
+**Target Audience:** [Who is this page speaking to?]
+**Primary Goal:** [What action does this page want?]
+**Unique Characteristics:** [What makes this page different/interesting?]
 
 ---
 ```
 
+**Page Types might include:**
+- Long-form VSL-style LP
+- Short-form direct response
+- Quiz funnel entry/results
+- Advertorial/Native ad style
+- Product detail page (PDP)
+- Collection/Category page
+- Comparison page
+- Listicle/Editorial style
+- Video-first page
+- Webinar registration
+- Lead magnet opt-in
+- Upsell/Cross-sell page
+- Thank you/Post-purchase
+- Or something entirely unique — describe it!
+
 ---
 
-### SECTION 2: PAGE STRUCTURE MAP
+### PART 2: Page Structure Map
 
-Create an ASCII tree showing the section flow:
+Create a visual map of WHAT YOU ACTUALLY SEE:
 
 ```markdown
 # === PAGE STRUCTURE ===
 
 \`\`\`
-[SECTION-NAME]
-├── [SECTION-NAME]
-├── [SECTION-NAME]
-│   ├── [SUB-ELEMENT]
-│   └── [SUB-ELEMENT]
-├── [SECTION-NAME]
-└── [SECTION-NAME]
+[Describe the sections in order, as they appear]
 \`\`\`
 ```
 
-Use these standard section naming conventions:
-- `STICKY-HEADER`
-- `HERO-SECTION`
-- `STATS-BAR`
-- `AS-SEEN-IN-BAR`
-- `PROBLEM-SECTION`
-- `SOLUTION-INTRO`
-- `INGREDIENTS-CAROUSEL` / `FEATURES-GRID`
-- `TESTIMONIALS-CAROUSEL`
-- `TRANSFORMATION-SECTION`
-- `BENEFITS-CHECKLIST`
-- `LIFESTYLE-BENEFITS`
-- `TRUST-BADGES`
-- `PRICING-SECTION`
-- `GUARANTEE-SECTION`
-- `REVIEWS-WIDGET`
+**Don't use a pre-defined list.** Name sections based on their function:
+
+Instead of forcing "HERO-SECTION", you might have:
+- `VIDEO-EMBED-WITH-HEADLINE`
+- `QUIZ-START-MODULE`
+- `STORY-OPENING`
+- `PROBLEM-STACK`
+- `PRODUCT-GRID`
 - `COMPARISON-TABLE`
-- `TEAM-SECTION`
-- `FAQ-ACCORDION`
-- `FINAL-CTA`
-- `FOOTER`
+- `URGENCY-BANNER`
+
+**The section names should tell someone what's IN that section.**
 
 ---
 
-### SECTION 3: SECTION-BY-SECTION BREAKDOWN
+### PART 3: Section-by-Section Breakdown
 
-For EACH section, use this format:
+For each section you identify, document:
 
 ```markdown
 ---
 
-## [SECTION: SECTION-NAME]
-**Layout:** [Grid type, columns, carousel, split, stacked, etc.]
-**Background:** [Color/gradient description]
-**Width:** [Full viewport / contained / etc.]
+## [SECTION: Descriptive-Name-You-Choose]
 
-### Element: [Element-Name]
-**Position:** [Left/Right/Center/Top/Bottom]
-**Type:** [Button/Image/Text block/Card/etc.]
-**Tag:** [H1/H2/H3/p/etc. if text]
-**Style:** [Visual styling notes]
-**Copy:**
-\`\`\`
-[Exact copy, verbatim]
-\`\`\`
+**What this section does:** [1-sentence purpose]
+**Layout:** [Describe how elements are arranged]
+**Background/Styling:** [Visual treatment]
 
-### Element: [Next-Element-Name]
-...
-```
-
-#### Element Types to Document:
-
-**For Headlines:**
-```markdown
-### Element: Main-Headline
-**Tag:** H1
-**Copy:**
-\`\`\`
-[Exact headline text]
-\`\`\`
-```
-
-**For Buttons/CTAs:**
-```markdown
-### Element: Primary-CTA
-**Type:** Button
-**Style:** [Color, size, shape]
-**Copy:**
-\`\`\`
-[Button text]
-\`\`\`
-**Link:** [Destination or anchor]
-```
-
-**For Images:**
-```markdown
-### Element: Hero-Image
-**Type:** [Product shot / Lifestyle / Illustration / Icon]
-**Shape:** [Rectangle / Circular / Custom]
-**Description:** [What the image shows]
-```
-
-**For Cards (repeating):**
-```markdown
-### Card-1:
-**Image:** [Description or shape]
-**Headline:** [Card title]
-**Body:**
-\`\`\`
-[Card body text]
-\`\`\`
-
-### Card-2:
-...
-```
-
-**For Testimonials:**
-```markdown
-### Testimonial-Card-1:
-**Name:** [Customer name]
-**Badge:** [Verified Buyer / etc.]
-**Rating:** ⭐⭐⭐⭐⭐
-**Headline:**
-\`\`\`
-[Review headline]
-\`\`\`
-**Body:**
-\`\`\`
-[Full review text]
-\`\`\`
-```
-
-**For Pricing Cards:**
-```markdown
-### Pricing-Card-1:
-**Label:** [STARTER / MOST POPULAR / BEST VALUE]
-**Badge:** [Discount badge if any]
-**Image:** [Product image description]
-**Price-Per-Unit:** [Price]
-**Price-Original:** [Strikethrough price if discounted]
-**Total:** [Total price]
-**CTA:**
-\`\`\`
-[Button text]
-\`\`\`
-**Trust-Badge:**
-\`\`\`
-[Guarantee text]
-\`\`\`
-**Bonuses:** [List of bonuses]
-```
-
-**For FAQ Items:**
-```markdown
-### FAQ-1:
-**Question:**
-\`\`\`
-[Question text]
-\`\`\`
-**Answer:**
-\`\`\`
-[Answer text, or [Expandable] if not visible]
-\`\`\`
+[Then document each element within the section]
 ```
 
 ---
 
-### SECTION 4: COPYWRITING PATTERNS
+## Element Documentation Guidelines
 
-After documenting all sections, extract and categorize the patterns:
+### For ANY Text Element:
+
+```markdown
+### Element: [Descriptive Name]
+**Type:** [Headline / Subhead / Body / Caption / Label / etc.]
+**Visual Weight:** [How prominent is this? Largest on page? Supporting text?]
+**Copy:**
+\`\`\`
+[Exact text, verbatim]
+\`\`\`
+```
+
+### For ANY Interactive Element:
+
+```markdown
+### Element: [Descriptive Name]
+**Type:** [Button / Link / Form / Quiz / Video / Carousel / etc.]
+**Behavior:** [What happens when interacted with?]
+**Copy/Label:**
+\`\`\`
+[Text on the element]
+\`\`\`
+```
+
+### For ANY Visual Element:
+
+```markdown
+### Element: [Descriptive Name]
+**Type:** [Photo / Illustration / Icon / Video / Animation / etc.]
+**Content:** [What does it show?]
+**Purpose:** [Why is this here? What does it communicate?]
+```
+
+### For Repeating Patterns (Cards, Lists, Grid Items):
+
+First, describe the pattern:
+```markdown
+### Pattern: [Name]
+**Instances:** [How many?]
+**Layout:** [How arranged?]
+**Each item contains:** [List the components]
+```
+
+Then document each instance:
+```markdown
+### Item 1:
+[Components and copy]
+
+### Item 2:
+[Components and copy]
+```
+
+---
+
+## Identifying Visual Layout from Raw Data
+
+When analyzing screenshots or scraped content, look for clues:
+
+### From Image Filenames:
+| Filename Contains | Likely Means |
+|-------------------|--------------|
+| `ellipse`, `circle`, `round` | Circular image/avatar |
+| `hero`, `banner` | Large featured image |
+| `icon`, `ico` | Small icon graphic |
+| `badge`, `seal` | Trust/certification badge |
+| `avatar`, `profile` | Person photo |
+| `logo` | Brand logo |
+| `bg`, `background` | Background image |
+| `thumbnail`, `thumb` | Small preview image |
+
+### From Content Patterns:
+| Pattern | Likely Means |
+|---------|--------------|
+| Same structure repeated 3+ times | Grid or carousel of cards |
+| `‹ ›` or arrow symbols | Carousel navigation |
+| Numbered items (1, 2, 3...) | Steps or process flow |
+| ⭐ or star symbols | Ratings/reviews |
+| ✓ or checkmarks | Benefits list or checklist |
+| ✗ or X marks | Comparison (what you DON'T get) |
+| `$` or prices | Pricing section |
+| `?` in headers | FAQ section |
+| Percentages or statistics | Social proof/stats bar |
+
+### From Heading Hierarchy:
+| Level | Typically Used For |
+|-------|-------------------|
+| H1 | Page title or major section headers |
+| H2 | Section headlines |
+| H3 | Subsection heads, card titles |
+| H4+ | Minor labels, small headings |
+
+---
+
+## PART 4: Pattern Extraction
+
+After documenting the page, extract the reusable patterns. **Only include patterns that actually appear on the page.**
 
 ```markdown
 ---
 
 # === COPYWRITING PATTERNS ===
 
-## Headline Formulas Used:
+## Headlines & Hooks
+[Document the headline formulas/approaches used]
 
-### [Formula Name]:
-\`\`\`
-[Example from page]
-\`\`\`
+## Trust & Credibility Elements
+[List all trust-building elements and where they appear]
 
-## Trust-Building Elements:
+## Call-to-Action Patterns
+[Document all CTAs - their copy, placement, frequency]
 
-1. **[Element Type]** ([Location])
-2. **[Element Type]** ([Location])
-...
+## Objection Handling
+[How does the page address potential objections?]
 
-## CTA Button Copy Variations:
+## Persuasion Sequence
+[Describe the flow: What's the journey from top to bottom?]
 
-1. \`[CTA text]\`
-2. \`[CTA text]\`
-...
-
-## Guarantee Language:
-
-\`\`\`
-[Guarantee copy 1]
-\`\`\`
-
-\`\`\`
-[Guarantee copy 2]
-\`\`\`
-
-## Objection Handling:
-
-| Objection | How Addressed |
-|-----------|---------------|
-| "[Objection]" | [How the page addresses it] |
-...
-
-## Emotional Triggers Used:
-
-1. **[Emotion]** → "[Copy that triggers it]"
-2. **[Emotion]** → "[Copy that triggers it]"
-...
-
-## Specificity Techniques:
-
-- "[Specific claim]" (not "[Generic version]")
-...
+## Notable Techniques
+[What's unique or interesting about this page's approach?]
 
 ---
 
@@ -273,73 +259,105 @@ After documenting all sections, extract and categorize the patterns:
 
 ---
 
-## Visual Layout Clues to Look For
+## Handling Different Page Types
 
-When analyzing screenshots or raw content, identify:
+### Quiz Funnels
+- Document each quiz step/question
+- Note the branching logic if visible
+- Capture result page variations
 
-### Image Filenames:
-- `Ellipse` → Circular image crop
-- `Rectangle` → Standard rectangular image
-- `Icon` → Small icon graphic
-- `Avatar` → Profile photo
-- `Hero` → Main hero image
-- `Badge` → Trust/certification badge
+### Video-First Pages
+- Note video placement and size
+- Document what's visible before/after video
+- Capture any text overlays or captions
 
-### Layout Indicators:
-- Repeating patterns = Grid or carousel
-- `‹ ›` or arrows = Carousel navigation
-- Numbered items = Steps or process
-- Checkmarks/bullets = Benefits list
-- Star ratings = Reviews/testimonials
+### Advertorials
+- Document the "editorial" styling
+- Note how it mimics news/blog content
+- Capture the transition to sales content
 
-### Heading Hierarchy:
-- H1 = Major section titles
-- H2 = Section headlines
-- H3 = Card titles, subheadings
-- Bold text = Emphasis within paragraphs
+### Short-Form Pages
+- Don't pad with sections that don't exist
+- A page might only have 3-4 sections — that's fine
+- Focus on density of persuasion elements
 
-### Section Transitions:
-- Background color changes = New section
-- Full-width dividers = Section break
-- Padding/spacing changes = Subsection
+### E-commerce PDPs
+- Product images and gallery
+- Variant selectors
+- Add-to-cart area
+- Product description
+- Reviews integration
+- Cross-sells/upsells
 
----
-
-## Output Requirements
-
-1. **Completeness:** Capture EVERY piece of visible copy
-2. **Structure:** Use consistent markdown formatting throughout
-3. **Verbatim:** Copy text exactly as written (including typos)
-4. **Visual Notes:** Describe layouts in developer-friendly terms
-5. **Patterns:** Extract reusable copywriting patterns at the end
+### Multi-Step Funnels
+- Document each step separately if possible
+- Note progress indicators
+- Capture transitions between steps
 
 ---
 
-## Example Usage
+## Quality Checklist
 
-**User Input:**
-```
-Analyze this landing page: [screenshot or URL]
-Use the competitor LP breakdown prompt.
-```
+Before finishing, verify:
 
-**Expected Output:**
-A complete markdown file following the structure above, saved to:
-`knowledge/competitor-pages/[brand]-[product]-lp.md`
+- [ ] Did I document sections in the order they appear?
+- [ ] Did I capture ALL visible copy?
+- [ ] Did I describe layouts, not just content?
+- [ ] Did I name sections based on what they DO, not a template?
+- [ ] Did I note visual hierarchy (what's big, what's small)?
+- [ ] Did I identify repeating patterns?
+- [ ] Did I extract the persuasion techniques used?
+- [ ] Would a developer understand the layout from my description?
+- [ ] Would a copywriter understand the messaging strategy?
 
 ---
 
 ## File Naming Convention
 
 ```
-knowledge/competitor-pages/[brand-name]-[product-or-page-name]-lp.md
+knowledge/competitor-pages/[brand]-[descriptor]-[page-type].md
 ```
 
 Examples:
 - `happy-mammoth-hormone-harmony-lp.md`
-- `athletic-greens-ag1-homepage.md`
-- `ritual-vitamins-quiz-funnel.md`
+- `athletic-greens-ag1-quiz-funnel.md`
+- `ritual-vitamins-homepage.md`
 - `seed-probiotics-pdp.md`
+- `goli-apple-cider-advertorial.md`
+- `noom-quiz-results-page.md`
+- `keeps-hair-loss-comparison.md`
+
+---
+
+## Example Usage
+
+**Flexible Input:**
+```
+Read the prompt at knowledge/prompts/competitor-lp-breakdown.md
+
+Analyze this: [screenshot / URL / Notion page / raw HTML]
+```
+
+**The output should adapt to whatever page type is provided.**
+
+---
+
+## Anti-Patterns to Avoid
+
+❌ **Don't force sections that don't exist**
+- If there's no FAQ, don't create an empty FAQ section
+
+❌ **Don't use generic section names when specific ones are better**
+- "HERO-SECTION" is fine, but "QUIZ-ENTRY-WITH-PAIN-POINT-HEADLINE" tells you more
+
+❌ **Don't reorganize the page flow**
+- Document top-to-bottom as it appears
+
+❌ **Don't summarize copy**
+- Capture it verbatim, then analyze patterns separately
+
+❌ **Don't assume standard structures**
+- A great page might break all the "rules"
 
 ---
 
@@ -348,5 +366,5 @@ Examples:
 | Version | Date | Changes |
 |---------|------|---------|
 | 1.0 | 2024-12-26 | Initial prompt created |
-
+| 2.0 | 2024-12-26 | Rewritten to be principle-based, not template-based. Added flexibility for different page types. |
 
